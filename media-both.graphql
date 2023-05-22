@@ -1,0 +1,25 @@
+interface Media @key(fields: "id") {
+  id: ID!
+}
+
+interface Music @key(fields: "id") {
+  id: ID!
+}
+
+type Album implements Media & Music @key(fields: "id") {
+  id: ID!
+  title: String!
+}
+
+type Book implements Media @key(fields: "id") {
+  id: ID!
+  title: String!
+}
+
+type Query {
+  album(id: ID!): Album!
+  book(id: ID!): Book!
+}
+
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.3", import: ["@key"])

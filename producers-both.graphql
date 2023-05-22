@@ -1,0 +1,30 @@
+type Music @key(fields: "id") @interfaceObject {
+  id: ID!
+  producer: Producer
+}
+
+type Media @key(fields: "id") @interfaceObject {
+  id: ID!
+  publisher: Publisher!
+}
+
+type Publisher @key(fields: "id") {
+  id: ID!
+  name: String!
+}
+
+type Producer {
+  name: String!
+}
+
+type Query {
+  producers: [Producer!]!
+  publishers: [Publisher!]!
+  publishedMedia: [Media!]!
+  producedMusic: [Music!]!
+}
+extend schema
+  @link(
+    url: "https://specs.apollo.dev/federation/v2.3"
+    import: ["@key", "@interfaceObject"]
+  )
