@@ -1,0 +1,10 @@
+version: 1
+subgraphs:
+  - name: media
+    routing_url: http://localhost:7902/graphql
+    schema:
+      file: ../graphs/media-both.graphql
+  - name: producers
+    routing_url: http://localhost:7905/query
+    schema:
+      file: ../graphs/producers.graphql

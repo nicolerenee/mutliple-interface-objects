@@ -1,10 +1,10 @@
-federation_version: =2.4.3
+federation_version: =2.10.0
 subgraphs:
   media:
     routing_url: http://localhost:7902/graphql
     schema:
-      file: media-both.graphql
+      file: ../graphs/media.graphql
   producers:
     routing_url: http://localhost:7905/query
     schema:
-      file: producers-both.graphql
+      file: ../graphs/producers.graphql

@@ -1,0 +1,11 @@
+{
+  "name": "Go",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}
