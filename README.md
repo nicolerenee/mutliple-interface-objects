@@ -7,18 +7,22 @@ generation fails.
 
 ## Example
 
-- We have a subgraph called [producers](graphs/producers.graphql) which provides `Producer` `Publisher` types. I also
-  define 2 `@interfaceObject` types, `Music` and `Media`.
+- We have a subgraph called [producers](graphs/producers.graphql) which provides the `Producer` and `Publisher` types.
+  Producers also define 2 `@interfaceObject` types `Music` and `Media`.
 
-- We have another subgraph called media that has two different versions
+- We have another subgraph called media that has two different versions:
 
-  - In the [first example](graphs/media.graphql) we define a type `Album` that implements the `Music` interface. We also
-    define the type `Book` that implements the `Media` interface. This example shows that there are no problems using
-    both the `Music` and `Media` interface from the producers subgraph.
+  - In the [first example](graphs/media.graphql) we define a type `Album` that implements the `Music` interface. We then
+    define the type `Book` that implements the `Media` interface.
+
+    This example shows that there are no problems using both the `Music` and `Media` interface from the producers
+    subgraph in the media subgraph.
 
   - The [second example](graphs/media-both.graphql) updates the type `Album` to implent both the `Music` and `Media`
-    interface. This causes failures during the generation of a router config for both the
-    [Apollo Router](apollo/README.md) and [Wundergraph Cosmo](cosmo/README.md).
+    interface.
+
+    This causes failures during the generation of a router config for both the [Apollo Router](apollo/README.md) and
+    [Wundergraph Cosmo](cosmo/README.md).
 
 ## Real world use case
 
